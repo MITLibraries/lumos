@@ -1,0 +1,157 @@
+html, body {
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  font-size: 0.8em;
+}
+
+ul {
+/*  margin-top: 4em;*/
+  font-size: 0.8em;
+  margin-left: none;
+  margin-right: 20px;
+}
+
+li {
+  list-style-type: none;
+  margin-left: none;
+  text-align: left;
+  padding-top: 0.5em;
+/*  float: right;*/
+/*  display: inline;*/
+}
+
+a {
+  color: navy;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: #aec7e8;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: normal;
+  color: white;
+  padding-left: 20px;
+  line-height: 150%;
+}
+
+#title {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+/*  height: 75px;*/
+  background-color: #aec7e8;
+  float:left;
+}
+
+#menu {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  z-index: 2;
+  width: 20%;
+/*  height: 75px;*/
+  background-color: #aec7e8;
+  float:right;
+}
+
+#display {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  float:left;
+}
+
+#info {
+  width: 33%;
+  height: 100%;
+  position: relative;
+  float: right;
+}
+
+#key {
+  float: right;
+}
+
+#metadata {
+  float: right;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.graph {
+
+}
+
+.mover line {
+  fill: none;
+  stroke: black;
+  stroke-width: 1.5px;
+}
+
+.rect {
+    stroke-width: 0px;
+}
+
+.keyText {
+
+}
+
+.mdText {
+  font-size: 1em;
+  line-height: 150%;
+}
+
+.plain_node {
+  stroke: #fff;
+  stroke-width: 0px;
+  opacity: 0.3;
+}
+
+.active_node {
+  opacity: 1.0;
+}
+
+.active_link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+.hidden_link {
+  stroke-opacity: 0;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node:hover {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.node--leaf {
+  fill: white;
+}
+
+.label {
+  font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-anchor: middle;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+}
+
+.label,
+.node--root,
+.node--leaf {
+  pointer-events: none;
+}

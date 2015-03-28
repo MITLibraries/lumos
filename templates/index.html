@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MIT Libraries Functional Visualization</title>
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,700|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href={{ url_for('static', filename='style.css') }} rel="stylesheet">
+    <meta id="data" data-level="{{ level }}" data-other="{{other}}">
+  </head>
+
+  <body>
+    <div id="title">
+      <h1>MIT Libraries<br />&nbsp; &nbsp;Organizational Functions Visualization</h1>
+    </div>
+
+    <div id="menu">
+      <ul id="navigation">
+        {% for item in navigation %}
+          <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div id="display">
+      <div id="info">
+        {% for l in levels %}
+          <a href="{{ url_for('index', level=l) }}">{{ l }}</a> | 
+        {% endfor %}
+<!--         <ul id="functions">
+          {% for function in level %}
+            <li id="function">{{ function }}</label>
+          {% endfor %} -->
+        </ul>
+
+<!--         <form action="/data" method="POST">
+          <ul id="functions">
+            {% for function in level %}
+              <li><label><input type="checkbox" name="functions" onclick="updateData()" checked="checked" value="{{ function }}"> {{ function }}</label>
+            {% endfor %}
+          </ul>
+          <input type="submit" value="Submit">
+        </form> -->
+
+      </div>
+    </div>
+
+    <script src={{ url_for('static', filename='circle_pack.js') }}></script>  
+    <script>
+      $(document).ready(function(){
+        var $form = $('form');
+        $form.submit(function(){
+          $.post($(this).attr('action'), $(this).serialize(), function(response){
+            // do something here on success
+          },'json');
+          return false;
+        });
+      });
+    </script>
+
+    <script>
+      var key_text = '{{ level|tojson|safe }}';
+    </script>
+
+  </body>
+
+</html>

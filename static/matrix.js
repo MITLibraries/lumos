@@ -5,22 +5,27 @@ $(function() {
 });
 
 function createGraph() {
-  var margin = {top: 80, right: 0, bottom: 10, left: 80},
-      width = 720,
-      height = 720;
+  var w = document.getElementById("display").offsetWidth;
+  var lw = w * 2/3;
+  var rw = w * 1/3;
+  var h = document.getElementById("display").offsetHeight-120;
+
+  var margin = {top: 320, right: 0, bottom: 10, left: 320},
+      width = 800,
+      height = 800;
 
   var x = d3.scale.ordinal().rangeBands([0, width]),
       z = d3.scale.linear().domain([0, 4]).clamp(true),
-      c = d3.scale.category10().domain(d3.range(10));
+      c = d3.scale.category20();
+      // c = d3.scale.category20().domain(d3.range(20));
 
-  var svg = d3.select("body").append("svg")
+  var svg = d3.select("#display").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
-      .style("margin-left", -margin.left + "px")
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  d3.json("miserables.json", function(miserables) {
+  d3.json("/matrix_data", function(miserables) {
     var matrix = [],
         nodes = miserables.nodes,
         n = nodes.length;
@@ -46,7 +51,7 @@ function createGraph() {
     var orders = {
       name: d3.range(n).sort(function(a, b) { return d3.ascending(nodes[a].name, nodes[b].name); }),
       count: d3.range(n).sort(function(a, b) { return nodes[b].count - nodes[a].count; }),
-      group: d3.range(n).sort(function(a, b) { return nodes[b].group - nodes[a].group; })
+      // group: d3.range(n).sort(function(a, b) { return nodes[b].group - nodes[a].group; })
     };
 
     // The default sort order.
@@ -55,7 +60,8 @@ function createGraph() {
     svg.append("rect")
         .attr("class", "background")
         .attr("width", width)
-        .attr("height", height);
+        .attr("height", height)
+        .attr("fill", "white");
 
     var row = svg.selectAll(".row")
         .data(matrix)
@@ -99,7 +105,8 @@ function createGraph() {
           .attr("width", x.rangeBand())
           .attr("height", x.rangeBand())
           .style("fill-opacity", function(d) { return z(d.z); })
-          .style("fill", function(d) { return nodes[d.x].group == nodes[d.y].group ? c(nodes[d.x].group) : null; })
+          .style("fill", "#d62728")
+          // .style("fill", function(d) { return nodes[d.x].group_type == nodes[d.y].group_type ? c(nodes[d.x].group_type) : null; })
           .on("mouseover", mouseover)
           .on("mouseout", mouseout);
     }
@@ -136,8 +143,9 @@ function createGraph() {
     }
 
     var timeout = setTimeout(function() {
-      order("group");
+      order("group_type");
       d3.select("#order").property("selectedIndex", 2).node().focus();
     }, 5000);
   });
+}
 

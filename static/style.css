@@ -8,8 +8,8 @@ body {
 }
 
 ul {
-/*  margin-top: 4em;*/
-  font-size: 0.8em;
+  /*margin-top: 4em;*/
+  font-size: 1em;
   margin-left: none;
   margin-right: 20px;
 }
@@ -47,6 +47,14 @@ a.title:hover {
   color: navy;
 }
 
+a.menu {
+  color: white;
+}
+
+a.menu:hover, a.menu:active {
+  color: navy;
+}
+
 #title {
   position: relative;
   z-index: 1;
@@ -61,7 +69,7 @@ a.title:hover {
   right: 8px;
   top: 8px;
   z-index: 2;
-  width: 20%;
+  width: 30%;
 /*  height: 75px;*/
   background-color: #aec7e8;
   float:right;
@@ -79,6 +87,7 @@ a.title:hover {
   height: 100%;
   position: relative;
   float: right;
+  margin-top: 10;
 }
 
 #key {
@@ -96,34 +105,14 @@ a.title:hover {
   shape-rendering: crispEdges;
 }
 
-.graph {
-
-}
-
-.mover line {
-  fill: none;
-  stroke: black;
-  stroke-width: 1.5px;
-}
-
 .rect {
     stroke-width: 0px;
-}
-
-.keyText {
-
 }
 
 .mdText {
   font-size: 1em;
   line-height: 150%;
 }
-
-/*.plain_node {
-  stroke: #fff;
-  stroke-width: 0px;
-  opacity: 0.3;
-}*/
 
 .faded_node {
   fill-opacity: 0.05;
@@ -166,8 +155,37 @@ a.title:hover {
   pointer-events: none;
 }
 
-/*.label,
-.node--root,
-.node--leaf {
-  pointer-events: none;
-}*/
+/* Additions for matrix diagram */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.background {
+  fill: #eee;
+}
+
+line {
+  stroke: #fff;
+}
+
+text.active {
+  fill: red;
+}
+
+svg {
+  font-size: 0.9em;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.active {
+  fill: red;
+  font-weight: bold;
+}

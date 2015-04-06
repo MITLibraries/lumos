@@ -45,7 +45,6 @@ def get_data_by_location(functions):
 		if function in functions:
 			add_to_children(parent, location)
 
-	# print json.dumps(RESULTS, indent=4, sort_keys=True)
 	return RESULTS
 
 def find(array, key, value):
@@ -73,14 +72,15 @@ def get_groups(group_type=None):
 def get_data_node_link():
 	RESULTS = {"nodes": [], "links": []}
 	nodes = RESULTS['nodes']
+	links = RESULTS['links']
 	global n
-	n = 1
+	n = 0
 
 	def add_node(name, group_type):
 		global n
 		nodes.append({
 			'name': function,
-			'group type': group_type,
+			'group_type': group_type,
 			'sort_key': n,
 			'locations': []
 		})
@@ -93,63 +93,37 @@ def get_data_node_link():
 			add_node(function, group_type)
 			return find(array, 'name', function)
 
+	def find_link(array, source, target):
+		for i, d in enumerate(array):
+			if d['source'] == source and d['target'] == target:
+				return i
+		raise ValueError
+
+	def add_to_links(array, source, target):
+		try:
+			array[find_link(array, source, target)]['value'] += 1
+		except ValueError:
+			array.append({
+				'source': source,
+				'target': target,
+				'value': 1
+				})
+
 	for row in range(1, sheet.nrows):
 		location = sheet.cell_value(row, 0)
 		function = sheet.cell_value(row, 2)
 		group_type = sheet.cell_value(row, 4)
 
-		nodes[get_index(function, nodes)]['locations'].append(location)
+		if location not in nodes[get_index(function, nodes)]['locations']:
+			nodes[get_index(function, nodes)]['locations'].append(location)
 
-	# TODO: Add links array to results.
+	# Add links array to results.
+	for node1 in nodes:
+		node1_key = node1['sort_key']
+		for node1_location in node1['locations']:
+			for node2 in nodes[node1_key+1:]:
+				node2_key = node2['sort_key']
+				if node1_location in node2['locations']:
+					add_to_links(links, node1_key, node2_key)
 
 	return RESULTS
-
-
-# def get_data_by_function(functions):
-# 	RESULTS = []
-
-# 	def get_child_index(parent, child):
-# 		try:
-# 			print parent, child
-# 			return find(parent, 'name', child)	
-# 		except ValueError:
-# 			add_child_level(parent, child)
-# 			return find(parent, 'name', child)
-
-# 	def add_child_level(parent, child):
-# 		parent.append({
-# 			'name': child,
-# 			'size': 0,
-# 			'locations': []
-# 			})
-
-# 	def add_to_children(parent, child):
-# 		index = get_child_index(parent, child)
-# 		parent[index]['locations'].append({
-# 			'name': str(sheet.cell_value(rowx, 0)),
-# 			'size': sheet.cell_value(rowx, 3)
-# 			})
-# 		parent[index]['size'] += sheet.cell_value(rowx, 3)
-
-# 	for rowx in range(1, sheet.nrows):
-# 		parent = RESULTS
-# 		location = str(sheet.cell_value(rowx, 0))
-# 		sub_location = str(sheet.cell_value(rowx, 1))
-# 		function = str(sheet.cell_value(rowx, 2))
-
-# 		if sheet.cell_type(rowx, 1) != 0:
-# 			index = get_child_index(parent, function)
-# 			parent = RESULTS[index]
-# 			location = sub_location
-
-# 		if function in functions:
-# 			add_to_children(parent, location)
-
-# 	# print json.dumps(RESULTS, indent=4, sort_keys=True)
-# 	return RESULTS
-
-
-print json.dumps(get_data_node_link(), indent=4, sort_keys=False)
-# print json.dumps(get_data_by_function(["Access Services", "Curation and Preservation", "Access Services", "Information Technology and Digital Development"]), indent=4, sort_keys=True)
-# print json.dumps(get_groups(), indent=4, sort_keys=True)
-# print json.dumps(get_hierarchy(["Annex Services", "Curation and Preservation", "Access Services", "Information Technology and Digital Development"]), indent=4, sort_keys=True)

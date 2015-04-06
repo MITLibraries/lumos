@@ -8,7 +8,7 @@ function createGraph() {
 	var w = document.getElementById("display").offsetWidth;
 	var lw = w * 2/3;
 	var rw = w * 1/3;
-	var h = document.getElementById("display").offsetHeight-90;
+	var h = document.getElementById("display").offsetHeight-120;
 
 	// var hidden = true;
 
@@ -23,7 +23,7 @@ function createGraph() {
 		.append("svg")
 		.attr("id", "key")
 		.attr("width", rw)
-		.attr("height", h);
+		.attr("height", JSON.parse(key_text).length*25 + 40);
 
 	var metadata = d3.select("#info")
 		.append("svg")
@@ -55,9 +55,11 @@ function createGraph() {
 		.style("visibility", "hidden")
 		.style("color", "white")
 		.style("padding", "8px")
-		.style("background-color", "rgba(0, 0, 0, 0.75)")
+		// .style("background-color", "navy")
+		.style("background-color", "rgba(0, 0, 0, 0.8)")
 		.style("border-radius", "6px")
 		.style("font", "12px sans-serif")
+		.style("line-height", "1.5")
 		.text("tooltip");
 
 	d3.selection.prototype.moveToFront = function() {
@@ -89,11 +91,41 @@ function createGraph() {
 			.attr("r", 10)
 			.attr("cx", 30)
 			.attr("cy", function(d, i) {
-			  return 20 + i*24;
+				return 20 + i*24;
 			})
 			.style("fill", function(d) { 
-			  return color(d); 
-			});
+				return color(d); 
+			})
+			.on("mouseover", function(d, i) {
+				circle.classed("faded_node", function(e, j) {
+					if (d != e.name) {
+						return true;
+					}
+					else {return false}
+				});
+				circle.classed("active_node", function(e, j) {
+					if (d == e.name) {
+						return true;
+					}
+					else {return false}
+				});
+				// metadata.append("foreignObject")
+				// 	.attr("x", 20)
+				// 	.attr("width", rw-20)
+				// 	.attr("height", 200)
+				// 	.append("xhtml:body")
+				// 	.attr("class", "mdText")
+				// 	.html(function() {
+				// 		console.log(root, d)
+				// 		if (root.name == d) {
+				// 			return d.name;
+				// 		}
+				// 	});
+			})
+			.on("mouseout", function(d, i) {
+        		circle.classed("active_node", true);
+        		circle.classed("faded_node", false);
+      		});
 
 		// var keyCircles = d3.selectAll("#function")
 		// 	// .selectAll("circle")
@@ -134,19 +166,26 @@ function createGraph() {
 			})
 			.on("click", function(d) { 
 				if (focus !== d) zoom(d), d3.event.stopPropagation(); 
+			})
+			.on("mouseover", function(d) {
+				if (d3.select(this).classed("node--leaf")) {
+					tooltip.html(function() {
+						if (d.size > 1) {
+							return d.name + "<br />" + d.size + " people in " + d.parent.name; //+ "<br />" + (d.size/d.parent.size).toFixed(2)*100 + "% of " d.parent.name;
+						}
+						else {
+							return d.name + "<br />" + d.size + " person in " + d.parent.name;
+						}
+					});
+					tooltip.style("visibility", "visible");
+				}
+			})
+			.on("mousemove", function() {
+				return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
+				})
+			.on("mouseout", function(){
+				return tooltip.style("visibility", "hidden");
 			});
-			// .on("mouseover", function(d) {
-			// 	d3.select(this);
-			// 	console.log(this);
-			// 	tooltip.text(d.name);
-			// 	tooltip.style("visibility", "visible");
-			// })
-			// .on("mousemove", function() {
-			// 	return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
-			// 	})
-			// .on("mouseout", function(){
-			// 	return tooltip.style("visibility", "hidden");
-			// });
 
 		var text = lsvg.selectAll("text")
 			.data(nodes)
@@ -205,15 +244,15 @@ function createGraph() {
 }
 
 
-function updateData() {
-    // Get the data again
-    d3.json("/data", function(error, root) {
-		if (error) return console.error(error);
+// function updateData() {
+//     // Get the data again
+//     d3.json("/data", function(error, root) {
+// 		if (error) return console.error(error);
 
-		// var focus = root;
-		// var nodes = pack.nodes(root);
-	});
-}
+// 		// var focus = root;
+// 		// var nodes = pack.nodes(root);
+// 	});
+// }
 
 
 

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify, request
 from wtforms import Form, BooleanField
-from data_vis import get_hierarchy, get_groups
+from data_vis import get_data_by_location, get_groups
 import json
 
 app = Flask(__name__)
@@ -30,7 +30,7 @@ def data():
 	if request.method == 'POST':
 		selected_groups = request.form.getlist("functions")
 		print selected_groups
-	return jsonify(get_hierarchy(selected_groups))
+	return jsonify(get_data_by_location(selected_groups))
 
 if __name__ == "__main__":
 	app.run(debug=True)

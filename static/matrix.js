@@ -6,20 +6,21 @@ $(function() {
 
 function createGraph() {
   var w = document.getElementById("display").offsetWidth;
-  var lw = w * 2/3;
-  var rw = w * 1/3;
+  var lw = w * 0.8;
+  var rw = w * 0.2;
   var h = document.getElementById("display").offsetHeight-120;
 
-  var margin = {top: 320, right: 0, bottom: 10, left: 320},
-      width = 800,
-      height = 800;
+  var margin = {top: 320, right: 5, bottom: 10, left: 320},
+      width = lw - margin.right - margin.left,
+      height = lw - margin.right - margin.left;
+
 
   var x = d3.scale.ordinal().rangeBands([0, width]),
       z = d3.scale.linear().domain([0, 4]).clamp(true),
       c = d3.scale.category20();
       // c = d3.scale.category20().domain(d3.range(20));
 
-  var svg = d3.select("#display").append("svg")
+  var svg = d3.select("#visualization").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")

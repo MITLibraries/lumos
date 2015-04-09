@@ -82,9 +82,21 @@ a.menu:hover, a.menu:active {
   float:left;
 }
 
+#visualization {
+  width: 80%;
+  position: relative;
+  float: left;
+}
+
 #info {
   width: 33%;
-  height: 100%;
+  height: 90%;
+  position: relative;
+  float: right;
+}
+
+#sort {
+  width: 20%;
   position: relative;
   float: right;
   margin-top: 10;

@@ -64,7 +64,7 @@ function createGraph() {
 		}); 
 	};
 
-	d3.json("/data", function(error, root) {
+	d3.json("/data/" + level, function(error, root) {
 		if (error) return console.error(error);
 
 		var focus = root;

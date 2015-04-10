@@ -33,7 +33,8 @@
     <script src={{ url_for('static', filename='circle_pack.js') }}></script>  
 
     <script>
-      var key_text = '{{ level|tojson|safe }}';
+      var key_text = '{{ functions|tojson|safe }}';
+      var level = '{{ level }}'
     </script>
 
   </body>

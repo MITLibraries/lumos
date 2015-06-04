@@ -1,12 +1,13 @@
 import xlrd
 import json
 
-file = xlrd.open_workbook('data/staff vis hierarchy location-function-size.xlsx')
-sheet = file.sheet_by_index(0)
+datafile = xlrd.open_workbook('data/staff vis hierarchy location-function-size.xlsx')
+sheet = datafile.sheet_by_index(0)
+mapdata = xlrd.open_workbook('data/map_data.xlsx')
+mapsheet = mapdata.sheet_by_index(0)
 n = 1
 
-
-def get_data_by_location(functions):
+def get_data_by_location(functions, subloc):
 	RESULTS = {'name': 'MIT Libraries', 'size': 0, 'children': []}
 
 	def get_child_index(parent, child):
@@ -23,8 +24,13 @@ def get_data_by_location(functions):
 			'children': []
 			})
 
-	def add_to_children(parent, child):
+	def add_to_children(parent, child, function):
 		index = get_child_index(parent, child)
+		for item in parent['children'][index]['children']:
+			if function == item['name']:
+				item['size'] += sheet.cell_value(rowx, 3)
+				parent['children'][index]['size'] += sheet.cell_value(rowx, 3)
+				return True
 		parent['children'][index]['children'].append({
 			'name': str(sheet.cell_value(rowx, 2)),
 			'size': sheet.cell_value(rowx, 3)
@@ -37,13 +43,22 @@ def get_data_by_location(functions):
 		sub_location = str(sheet.cell_value(rowx, 1))
 		function = str(sheet.cell_value(rowx, 2))
 
-		if sheet.cell_type(rowx, 1) != 0:
-			index = get_child_index(parent, location)
-			parent = RESULTS['children'][index]
-			location = sub_location
+		if subloc == True:
+			if sheet.cell_type(rowx, 1) != 0:
+				index = get_child_index(parent, location)
+				parent = RESULTS['children'][index]
+				location = sub_location
+			if function in functions:
+				add_to_children(parent, location, function)
+		else:
+			if function in functions:
+				add_to_children(parent, location, function)
 
-		if function in functions:
-			add_to_children(parent, location)
+	for item in RESULTS['children']:
+		for rowx in range(1, mapsheet.nrows):
+			if item['name'] == str(mapsheet.cell_value(rowx, 0)):
+				item['x_offset'] = mapsheet.cell_value(rowx, 1)
+				item['y_offset'] = mapsheet.cell_value(rowx, 2)
 
 	return RESULTS
 

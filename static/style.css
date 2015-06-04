@@ -131,7 +131,13 @@ a.menu:hover, a.menu:active {
 }
 
 .active_node {
-  fill-opacity: 1.0;
+  fill-opacity: 0.6;
+  stroke: black;
+}
+
+.initial {
+  fill: white;
+  stroke: black;
 }
 
 .active_link {

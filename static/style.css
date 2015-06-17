@@ -126,11 +126,23 @@ a.menu:hover, a.menu:active {
   line-height: 150%;
 }
 
+.legendText {
+  font-size: 0.7em;
+}
+
 .faded_node {
   fill-opacity: 0.05;
 }
 
+.faded_map_node {
+  fill-opacity: 0.05;
+}
+
 .active_node {
+  fill-opacity: 1.0;
+}
+
+.active_map_node {
   fill-opacity: 0.6;
   stroke: black;
 }
@@ -170,6 +182,7 @@ a.menu:hover, a.menu:active {
 
 .label,
 .node--root, {
+  stroke: #000;
   pointer-events: none;
 }
 

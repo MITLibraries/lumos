@@ -85,7 +85,7 @@ function createGraph() {
 			})
 			.on("mouseover", function(d, i) {
 				circle.classed("faded_node", function(e, j) {
-					if (d != e.name) {
+					if (d != e.name || !circle.classed("node-root")) {
 						return true;
 					}
 					else {return false}

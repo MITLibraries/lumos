@@ -127,7 +127,7 @@ function createGraph() {
         d3.selectAll("p").remove();
         currentGroup.locations = [];
 
-        circle.classed("faded_node", true);
+        circle.classed("faded_map_node", true);
         circle.classed("initial", false);
 
         circle.attr("r", function(e, j) {
@@ -142,7 +142,7 @@ function createGraph() {
           return color(d);
         });
 
-        circle.classed("active_node", function(e, j) {
+        circle.classed("active_map_node", function(e, j) {
           for (item in e.children) {
             if (d == e.children[item].name) {
               currentGroup.name = e.children[item].name;
@@ -199,7 +199,7 @@ function createGraph() {
       .attr("r", function(d) {
         return initialScale(d.size);
       })
-      .attr("class", "active_node initial")
+      .attr("class", "active_map_node initial")
       .on("mouseover", function(d) {
         tooltip.html(function() {
           for (item in d.children) {
@@ -222,7 +222,7 @@ function createGraph() {
         return tooltip.style("visibility", "hidden");
       });
 
-    var circleKey = lsvg.selectAll("rect")
+    var legend = lsvg.selectAll("rect")
       .data(circleSizes)
       .enter().append("circle")
       .attr("class", "initial")
@@ -236,6 +236,23 @@ function createGraph() {
       })
       .attr("r", function(d) {
         return d;
+      });
+
+    var legendText = lsvg.selectAll("line")
+      .data(circleSizes)
+      .enter().append("text")
+      .attr("class", "legendText")
+      .style("text-anchor", "middle")
+      .attr("x", 100)
+      .attr("y", function(d, i) {
+        if (i == 0) {
+          return 100 - d - 2;
+        } else {
+          return 100 + circleSizes[0] - (2 * d) - 2;
+        }
+      })
+      .text(function(d, i) {
+        return numPeople[i];
       });
 
   });

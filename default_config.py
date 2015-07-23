@@ -1,0 +1,2 @@
+# Default configuration
+DEBUG = False

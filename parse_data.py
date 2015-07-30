@@ -223,20 +223,20 @@ if __name__ == '__main__':
 	keys = parse_lc_class_subject_key('data/lc_class_subject_key.csv')
 	print "Finish parsing subject keys: " + time.strftime('%I:%M:%S')
 	# Process on campus data
-	on_campus_data = add_subject_field('data/item_by_location_campus.txt', keys)
+	on_campus_data = add_subject_field('data/collections_data/item_by_location_campus.txt', keys)
 	print "Finish adding subject field to on campus data: " + time.strftime('%I:%M:%S')
 	clean_on_campus_data = clean_new_data(on_campus_data)
 	print "Finish cleaning on campus data: " + time.strftime('%I:%M:%S')
 	# Process off campus data
-	off_campus_data = add_subject_field('data/item_by_location_off_campus.txt', keys)
+	off_campus_data = add_subject_field('data/collections_data/item_by_location_off_campus.txt', keys)
 	print "Finish adding subject field to off campus data: " + time.strftime('%I:%M:%S')
 	clean_off_campus_data = clean_new_data(off_campus_data)
 	print "Finish cleaning off campus data: " + time.strftime('%I:%M:%S')
 	# Write both data sets to combined file
-	write_to_tsv(clean_on_campus_data, 'data/combined_item_by_location.txt')
+	write_to_tsv(clean_on_campus_data, 'data/collections_data/combined_item_by_location.txt')
 	print "Finish writing on campus data to file: " + time.strftime('%I:%M:%S')
-	add_to_tsv(clean_off_campus_data, 'data/combined_item_by_location.txt')
+	add_to_tsv(clean_off_campus_data, 'data/collections_data/combined_item_by_location.txt')
 	print "Finish writing off campus data to file: " + time.strftime('%I:%M:%S')
 	# Write final data to JSON file
-	write_to_json(get_collections_by_location_json('data/combined_item_by_location.txt'), 'static/collections_data.json')
+	write_to_json(get_collections_by_location_json('data/collections_data/combined_item_by_location.txt'), 'static/collections_data.json')
 	print "Finish writing all data to JSON file: " + time.strftime('%I:%M:%S')

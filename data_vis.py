@@ -1,5 +1,6 @@
 import xlrd
 import json
+import csv
 
 datafile = xlrd.open_workbook('data/staff vis hierarchy location-function-size.xlsx')
 sheet = datafile.sheet_by_index(0)
@@ -142,3 +143,14 @@ def get_data_node_link():
 					add_to_links(links, node1_key, node2_key)
 
 	return RESULTS
+
+def get_subjects_list():
+	RESULTS = []
+	with open('data/lc_class_subject_key.csv', 'rb') as data_file:
+		data = csv.reader(data_file)
+		for row in data:
+			if row[1] in RESULTS:
+				pass
+			else:
+				RESULTS.append(str(row[1]))
+	return sorted(RESULTS)

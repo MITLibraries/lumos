@@ -13,29 +13,34 @@ function compare(a,b) {
 }
 
 function createGraph() {
+  function getLegendRange() {
+    r = [];
+    for (k in legendDomain) {
+      r.push(scale(legendDomain[k]));
+    }
+    return r;
+  }
+
   var w = document.getElementById("display").offsetWidth;
   var lw = w * 2/3;
   var rw = w * 1/3;
   var h = lw * 0.37
 
-  var currentGroup = {"name":level, "locations":[]};
-  var circleSizes = [70, 39.24, 18.3, 11.29, 5];
-  var numPeople = [94, 50, 20, 10, 5]
-
+  var currentSubject = {"name":"all_subjects", "locations":[]};
   var color = d3.scale.category20();
-  var levels = JSON.parse(key_text);
+  var colls = JSON.parse(collections);
+
   var scale = d3.scale.linear()
-    .domain([1, 94])
-    .range([5, 70]);
-  var initialScale = d3.scale.linear()
-    .domain([1, 94])
-    .range([5, 70]);
+    .domain([1, 5000, 50000, 500000, 1000000])
+    .range([2, 20, 40, 60, 80]);
+  var legendDomain = [1000000, 100000, 10000, 100];
+  var legendRange = getLegendRange();
 
   var key = d3.select("#info")
     .append("svg")
     .attr("id", "key")
     .attr("width", rw)
-    .attr("height", levels.length*25 + 40);
+    .attr("height", colls.length*25 + 40);
 
   var margin = 20;
   var padding = 6;
@@ -84,7 +89,7 @@ function createGraph() {
     .style("line-height", "1.5")
     .text("tooltip");
 
-  d3.json("/map_data/" + level, function(error, data) {
+  d3.json('static/collections_data.json', function(error, data) {
     if (error) return console.error(error);
 
     var locations = data.children;
@@ -98,12 +103,12 @@ function createGraph() {
       .append("xhtml:body")
       .attr("class", "mdText")
       .html(function() {
-        textContent = "<p><strong>Total</strong><br />";
+        textContent = "<p><strong>Totals</strong><br />";
         for (item in locations) {
           if (locations[item].size > 1) {
-            textContent += locations[item].size + " people in " + locations[item].name + "<br />";
+            textContent += locations[item].size + " items in " + locations[item].name + "<br />";
           } else {
-            textContent += locations[item].size + " person in " + locations[item].name + "<br />";
+            textContent += locations[item].size + " items in " + locations[item].name + "<br />";
           }
         }
         textContent += "</p>";
@@ -111,7 +116,7 @@ function createGraph() {
       });
 
     var keyCircles = key.selectAll("circle")
-      .data(levels)
+      .data(colls)
       .enter()
       .append("circle")
       .attr("r", 10)
@@ -125,7 +130,7 @@ function createGraph() {
       .style("fill-opacity", "0.6")
       .on("mouseover", function(d, i) {
         d3.selectAll("p").remove();
-        currentGroup.locations = [];
+        currentSubject.locations = [];
 
         circle.classed("faded_map_node", true);
         circle.classed("initial", false);
@@ -145,9 +150,9 @@ function createGraph() {
         circle.classed("active_map_node", function(e, j) {
           for (item in e.children) {
             if (d == e.children[item].name) {
-              currentGroup.name = e.children[item].name;
-              currentGroup.locations.push({"name":e.name, "size":e.children[item].size});
-              currentGroup.locations.sort(compare);
+              currentSubject.name = e.children[item].name;
+              currentSubject.locations.push({"name":e.name, "size":e.children[item].size});
+              currentSubject.locations.sort(compare);
               return true;
             }
           }
@@ -162,11 +167,11 @@ function createGraph() {
           .attr("class", "mdText")
           .html(function() {
             textContent = "<p><strong>" + d + "</strong><br />";
-            for (item in currentGroup.locations) {
-              if (currentGroup.locations[item].size > 1) {
-                textContent += currentGroup.locations[item].size + " people in " + currentGroup.locations[item].name + "<br />";
+            for (item in currentSubject.locations) {
+              if (currentSubject.locations[item].size > 1) {
+                textContent += currentSubject.locations[item].size + " items in " + currentSubject.locations[item].name + "<br />";
               } else {
-                textContent += currentGroup.locations[item].size + " person in " + currentGroup.locations[item].name + "<br />";
+                textContent += currentSubject.locations[item].size + " item in " + currentSubject.locations[item].name + "<br />";
               }
             }
             textContent += "</p>";
@@ -175,7 +180,7 @@ function createGraph() {
       });        
 
     var keyText = key.selectAll("text")
-      .data(levels)
+      .data(colls)
       .enter()
       .append("text")
       .attr("x", 45)
@@ -197,21 +202,21 @@ function createGraph() {
         return d.y_offset * h;
       })
       .attr("r", function(d) {
-        return initialScale(d.size);
+        return scale(d.size);
       })
       .attr("class", "active_map_node initial")
       .on("mouseover", function(d) {
         tooltip.html(function() {
           for (item in d.children) {
-            if (d.children[item].name == currentGroup.name) {
+            if (d.children[item].name == currentSubject.name) {
               if (d.children[item].size > 1) {
-                return d.children[item].name + "<br />" + d.children[item].size + " people in " + d.name;
+                return d.children[item].name + "<br />" + d.children[item].size + " items in " + d.name;
               } else {
-                return d.children[item].name + "<br />" + d.children[item].size + " person in " + d.name;
+                return d.children[item].name + "<br />" + d.children[item].size + " item in " + d.name;
               }
             }
           }
-          return d.size + " people in " + d.name;
+          return d.size + " items in " + d.name;
         });
         tooltip.style("visibility", "visible");
       })
@@ -223,7 +228,7 @@ function createGraph() {
       });
 
     var legend = lsvg.selectAll("rect")
-      .data(circleSizes)
+      .data(legendRange)
       .enter().append("circle")
       .attr("class", "initial")
       .attr("cx", 100)
@@ -231,7 +236,7 @@ function createGraph() {
         if (i == 0) {
           return 100;
         } else {
-          return 100 + circleSizes[0] - d;
+          return 100 + legendRange[0] - d;
         }
       })
       .attr("r", function(d) {
@@ -239,7 +244,7 @@ function createGraph() {
       });
 
     var legendText = lsvg.selectAll("line")
-      .data(circleSizes)
+      .data(legendRange)
       .enter().append("text")
       .attr("class", "legendText")
       .style("text-anchor", "middle")
@@ -248,13 +253,12 @@ function createGraph() {
         if (i == 0) {
           return 100 - d - 2;
         } else {
-          return 100 + circleSizes[0] - (2 * d) - 2;
+          return 100 + legendRange[0] - (2 * d) - 2;
         }
       })
       .text(function(d, i) {
-        return numPeople[i];
+        return legendDomain[i];
       });
-
   });
 
 }

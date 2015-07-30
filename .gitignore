@@ -97,3 +97,4 @@ target/
 # And some other stuff
 venv
 *.pyc
+data/collections_data/

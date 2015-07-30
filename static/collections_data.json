@@ -1,0 +1,1038 @@
+{
+    "children": [
+        {
+            "y_offset": 0.665, 
+            "children": [
+                {
+                    "name": "General Works", 
+                    "size": 1118
+                }, 
+                {
+                    "name": "Philosophy and Religion", 
+                    "size": 18
+                }, 
+                {
+                    "name": "Psychology", 
+                    "size": 72
+                }, 
+                {
+                    "name": "History", 
+                    "size": 23
+                }, 
+                {
+                    "name": "Geography", 
+                    "size": 3005
+                }, 
+                {
+                    "name": "Environmental Science", 
+                    "size": 74
+                }, 
+                {
+                    "name": "Anthropology", 
+                    "size": 65
+                }, 
+                {
+                    "name": "Social Science", 
+                    "size": 141
+                }, 
+                {
+                    "name": "Statistics", 
+                    "size": 5
+                }, 
+                {
+                    "name": "Economics", 
+                    "size": 57
+                }, 
+                {
+                    "name": "Business and Management", 
+                    "size": 3353
+                }, 
+                {
+                    "name": "Political Science", 
+                    "size": 38
+                }, 
+                {
+                    "name": "Law", 
+                    "size": 254
+                }, 
+                {
+                    "name": "Education", 
+                    "size": 98
+                }, 
+                {
+                    "name": "Music", 
+                    "size": 26
+                }, 
+                {
+                    "name": "Fine Arts", 
+                    "size": 73
+                }, 
+                {
+                    "name": "Language and Literature", 
+                    "size": 208
+                }, 
+                {
+                    "name": "General Science", 
+                    "size": 2704
+                }, 
+                {
+                    "name": "Mathematics", 
+                    "size": 6628
+                }, 
+                {
+                    "name": "Computer Science", 
+                    "size": 14460
+                }, 
+                {
+                    "name": "Astronomy", 
+                    "size": 157
+                }, 
+                {
+                    "name": "Physics", 
+                    "size": 5514
+                }, 
+                {
+                    "name": "Chemistry", 
+                    "size": 585
+                }, 
+                {
+                    "name": "Geology", 
+                    "size": 233
+                }, 
+                {
+                    "name": "Biology", 
+                    "size": 842
+                }, 
+                {
+                    "name": "Medicine", 
+                    "size": 1075
+                }, 
+                {
+                    "name": "Agriculture", 
+                    "size": 255
+                }, 
+                {
+                    "name": "Technology and Engineering", 
+                    "size": 75086
+                }, 
+                {
+                    "name": "Thesis", 
+                    "size": 34789
+                }, 
+                {
+                    "name": "Military Science", 
+                    "size": 336
+                }, 
+                {
+                    "name": "Naval Science", 
+                    "size": 1992
+                }
+            ], 
+            "name": "Barker Library", 
+            "x_offset": 0.5675, 
+            "size": 153284
+        }, 
+        {
+            "y_offset": 0.8045, 
+            "children": [
+                {
+                    "name": "General Works", 
+                    "size": 875
+                }, 
+                {
+                    "name": "Philosophy and Religion", 
+                    "size": 1457
+                }, 
+                {
+                    "name": "Psychology", 
+                    "size": 1133
+                }, 
+                {
+                    "name": "History", 
+                    "size": 19810
+                }, 
+                {
+                    "name": "Geography", 
+                    "size": 846
+                }, 
+                {
+                    "name": "Environmental Science", 
+                    "size": 649
+                }, 
+                {
+                    "name": "Anthropology", 
+                    "size": 507
+                }, 
+                {
+                    "name": "Social Science", 
+                    "size": 15760
+                }, 
+                {
+                    "name": "Statistics", 
+                    "size": 2488
+                }, 
+                {
+                    "name": "Economics", 
+                    "size": 30043
+                }, 
+                {
+                    "name": "Business and Management", 
+                    "size": 78397
+                }, 
+                {
+                    "name": "Political Science", 
+                    "size": 25079
+                }, 
+                {
+                    "name": "Law", 
+                    "size": 9537
+                }, 
+                {
+                    "name": "Education", 
+                    "size": 1298
+                }, 
+                {
+                    "name": "Music", 
+                    "size": 9
+                }, 
+                {
+                    "name": "Fine Arts", 
+                    "size": 61
+                }, 
+                {
+                    "name": "Language and Literature", 
+                    "size": 1458
+                }, 
+                {
+                    "name": "General Science", 
+                    "size": 2046
+                }, 
+                {
+                    "name": "Mathematics", 
+                    "size": 1616
+                }, 
+                {
+                    "name": "Computer Science", 
+                    "size": 807
+                }, 
+                {
+                    "name": "Astronomy", 
+                    "size": 35
+                }, 
+                {
+                    "name": "Physics", 
+                    "size": 495
+                }, 
+                {
+                    "name": "Chemistry", 
+                    "size": 5
+                }, 
+                {
+                    "name": "Geology", 
+                    "size": 12
+                }, 
+                {
+                    "name": "Biology", 
+                    "size": 358
+                }, 
+                {
+                    "name": "Medicine", 
+                    "size": 3157
+                }, 
+                {
+                    "name": "Agriculture", 
+                    "size": 810
+                }, 
+                {
+                    "name": "Technology and Engineering", 
+                    "size": 7594
+                }, 
+                {
+                    "name": "Thesis", 
+                    "size": 10816
+                }, 
+                {
+                    "name": "Military Science", 
+                    "size": 6019
+                }, 
+                {
+                    "name": "Naval Science", 
+                    "size": 351
+                }
+            ], 
+            "name": "Dewey Library", 
+            "x_offset": 0.823, 
+            "size": 223528
+        }, 
+        {
+            "y_offset": 0.835, 
+            "children": [
+                {
+                    "name": "General Works", 
+                    "size": 11618
+                }, 
+                {
+                    "name": "Philosophy and Religion", 
+                    "size": 15861
+                }, 
+                {
+                    "name": "Psychology", 
+                    "size": 5290
+                }, 
+                {
+                    "name": "History", 
+                    "size": 24424
+                }, 
+                {
+                    "name": "Geography", 
+                    "size": 21423
+                }, 
+                {
+                    "name": "Environmental Science", 
+                    "size": 411
+                }, 
+                {
+                    "name": "Anthropology", 
+                    "size": 4455
+                }, 
+                {
+                    "name": "Social Science", 
+                    "size": 10337
+                }, 
+                {
+                    "name": "Statistics", 
+                    "size": 48
+                }, 
+                {
+                    "name": "Economics", 
+                    "size": 253
+                }, 
+                {
+                    "name": "Business and Management", 
+                    "size": 1498
+                }, 
+                {
+                    "name": "Political Science", 
+                    "size": 894
+                }, 
+                {
+                    "name": "Law", 
+                    "size": 610
+                }, 
+                {
+                    "name": "Education", 
+                    "size": 3586
+                }, 
+                {
+                    "name": "Music", 
+                    "size": 180
+                }, 
+                {
+                    "name": "Fine Arts", 
+                    "size": 915
+                }, 
+                {
+                    "name": "Language and Literature", 
+                    "size": 95269
+                }, 
+                {
+                    "name": "General Science", 
+                    "size": 6428
+                }, 
+                {
+                    "name": "Mathematics", 
+                    "size": 27025
+                }, 
+                {
+                    "name": "Computer Science", 
+                    "size": 604
+                }, 
+                {
+                    "name": "Astronomy", 
+                    "size": 3759
+                }, 
+                {
+                    "name": "Physics", 
+                    "size": 20753
+                }, 
+                {
+                    "name": "Chemistry", 
+                    "size": 15195
+                }, 
+                {
+                    "name": "Geology", 
+                    "size": 9487
+                }, 
+                {
+                    "name": "Biology", 
+                    "size": 23638
+                }, 
+                {
+                    "name": "Medicine", 
+                    "size": 13354
+                }, 
+                {
+                    "name": "Agriculture", 
+                    "size": 1482
+                }, 
+                {
+                    "name": "Technology and Engineering", 
+                    "size": 23351
+                }, 
+                {
+                    "name": "Thesis", 
+                    "size": 13682
+                }, 
+                {
+                    "name": "Military Science", 
+                    "size": 709
+                }, 
+                {
+                    "name": "Naval Science", 
+                    "size": 333
+                }
+            ], 
+            "name": "Hayden Library", 
+            "x_offset": 0.635, 
+            "size": 356872
+        }, 
+        {
+            "y_offset": 0.655, 
+            "children": [
+                {
+                    "name": "General Works", 
+                    "size": 970
+                }, 
+                {
+                    "name": "Philosophy and Religion", 
+                    "size": 987
+                }, 
+                {
+                    "name": "Psychology", 
+                    "size": 324
+                }, 
+                {
+                    "name": "History", 
+                    "size": 9444
+                }, 
+                {
+                    "name": "Geography", 
+                    "size": 5812
+                }, 
+                {
+                    "name": "Environmental Science", 
+                    "size": 627
+                }, 
+                {
+                    "name": "Anthropology", 
+                    "size": 1230
+                }, 
+                {
+                    "name": "Social Science", 
+                    "size": 12564
+                }, 
+                {
+                    "name": "Statistics", 
+                    "size": 565
+                }, 
+                {
+                    "name": "Economics", 
+                    "size": 2292
+                }, 
+                {
+                    "name": "Business and Management", 
+                    "size": 8790
+                }, 
+                {
+                    "name": "Political Science", 
+                    "size": 957
+                }, 
+                {
+                    "name": "Law", 
+                    "size": 1085
+                }, 
+                {
+                    "name": "Education", 
+                    "size": 728
+                }, 
+                {
+                    "name": "Music", 
+                    "size": 57
+                }, 
+                {
+                    "name": "Fine Arts", 
+                    "size": 57464
+                }, 
+                {
+                    "name": "Language and Literature", 
+                    "size": 1139
+                }, 
+                {
+                    "name": "General Science", 
+                    "size": 120
+                }, 
+                {
+                    "name": "Mathematics", 
+                    "size": 128
+                }, 
+                {
+                    "name": "Computer Science", 
+                    "size": 69
+                }, 
+                {
+                    "name": "Astronomy", 
+                    "size": 14
+                }, 
+                {
+                    "name": "Physics", 
+                    "size": 112
+                }, 
+                {
+                    "name": "Chemistry", 
+                    "size": 2
+                }, 
+                {
+                    "name": "Geology", 
+                    "size": 38
+                }, 
+                {
+                    "name": "Biology", 
+                    "size": 626
+                }, 
+                {
+                    "name": "Medicine", 
+                    "size": 473
+                }, 
+                {
+                    "name": "Agriculture", 
+                    "size": 2253
+                }, 
+                {
+                    "name": "Technology and Engineering", 
+                    "size": 11517
+                }, 
+                {
+                    "name": "Thesis", 
+                    "size": 3554
+                }, 
+                {
+                    "name": "Military Science", 
+                    "size": 79
+                }, 
+                {
+                    "name": "Naval Science", 
+                    "size": 26
+                }
+            ], 
+            "name": "Rotch Library", 
+            "x_offset": 0.5262, 
+            "size": 124046
+        }, 
+        {
+            "y_offset": 0.79, 
+            "children": [
+                {
+                    "name": "General Works", 
+                    "size": 808
+                }, 
+                {
+                    "name": "Philosophy and Religion", 
+                    "size": 282
+                }, 
+                {
+                    "name": "Psychology", 
+                    "size": 625
+                }, 
+                {
+                    "name": "History", 
+                    "size": 1105
+                }, 
+                {
+                    "name": "Geography", 
+                    "size": 768
+                }, 
+                {
+                    "name": "Environmental Science", 
+                    "size": 7
+                }, 
+                {
+                    "name": "Anthropology", 
+                    "size": 175
+                }, 
+                {
+                    "name": "Social Science", 
+                    "size": 1651
+                }, 
+                {
+                    "name": "Statistics", 
+                    "size": 6
+                }, 
+                {
+                    "name": "Economics", 
+                    "size": 2004
+                }, 
+                {
+                    "name": "Business and Management", 
+                    "size": 5766
+                }, 
+                {
+                    "name": "Political Science", 
+                    "size": 229
+                }, 
+                {
+                    "name": "Law", 
+                    "size": 288
+                }, 
+                {
+                    "name": "Education", 
+                    "size": 241
+                }, 
+                {
+                    "name": "Music", 
+                    "size": 41
+                }, 
+                {
+                    "name": "Fine Arts", 
+                    "size": 526
+                }, 
+                {
+                    "name": "Language and Literature", 
+                    "size": 1335
+                }, 
+                {
+                    "name": "General Science", 
+                    "size": 2177
+                }, 
+                {
+                    "name": "Mathematics", 
+                    "size": 1137
+                }, 
+                {
+                    "name": "Computer Science", 
+                    "size": 1339
+                }, 
+                {
+                    "name": "Astronomy", 
+                    "size": 510
+                }, 
+                {
+                    "name": "Physics", 
+                    "size": 9118
+                }, 
+                {
+                    "name": "Chemistry", 
+                    "size": 893
+                }, 
+                {
+                    "name": "Geology", 
+                    "size": 252
+                }, 
+                {
+                    "name": "Biology", 
+                    "size": 880
+                }, 
+                {
+                    "name": "Medicine", 
+                    "size": 1294
+                }, 
+                {
+                    "name": "Agriculture", 
+                    "size": 94
+                }, 
+                {
+                    "name": "Technology and Engineering", 
+                    "size": 27346
+                }, 
+                {
+                    "name": "Thesis", 
+                    "size": 158060
+                }, 
+                {
+                    "name": "Military Science", 
+                    "size": 471
+                }, 
+                {
+                    "name": "Naval Science", 
+                    "size": 566
+                }
+            ], 
+            "name": "IASC", 
+            "x_offset": 0.635, 
+            "size": 219994
+        }, 
+        {
+            "y_offset": 0.81, 
+            "children": [
+                {
+                    "name": "General Works", 
+                    "size": 5
+                }, 
+                {
+                    "name": "Philosophy and Religion", 
+                    "size": 57
+                }, 
+                {
+                    "name": "Psychology", 
+                    "size": 7
+                }, 
+                {
+                    "name": "Music", 
+                    "size": 75067
+                }, 
+                {
+                    "name": "History", 
+                    "size": 49
+                }, 
+                {
+                    "name": "Geography", 
+                    "size": 2
+                }, 
+                {
+                    "name": "Anthropology", 
+                    "size": 114
+                }, 
+                {
+                    "name": "Business and Management", 
+                    "size": 1
+                }, 
+                {
+                    "name": "Social Science", 
+                    "size": 4
+                }, 
+                {
+                    "name": "Political Science", 
+                    "size": 3
+                }, 
+                {
+                    "name": "Law", 
+                    "size": 10
+                }, 
+                {
+                    "name": "Education", 
+                    "size": 3
+                }, 
+                {
+                    "name": "Fine Arts", 
+                    "size": 25
+                }, 
+                {
+                    "name": "Language and Literature", 
+                    "size": 396
+                }, 
+                {
+                    "name": "General Science", 
+                    "size": 2
+                }, 
+                {
+                    "name": "Mathematics", 
+                    "size": 4
+                }, 
+                {
+                    "name": "Computer Science", 
+                    "size": 3
+                }, 
+                {
+                    "name": "Astronomy", 
+                    "size": 1
+                }, 
+                {
+                    "name": "Physics", 
+                    "size": 15
+                }, 
+                {
+                    "name": "Biology", 
+                    "size": 10
+                }, 
+                {
+                    "name": "Medicine", 
+                    "size": 2
+                }, 
+                {
+                    "name": "Agriculture", 
+                    "size": 78
+                }, 
+                {
+                    "name": "Technology and Engineering", 
+                    "size": 98
+                }, 
+                {
+                    "name": "Thesis", 
+                    "size": 3
+                }, 
+                {
+                    "name": "Naval Science", 
+                    "size": 161
+                }
+            ], 
+            "name": "Lewis Music Library", 
+            "x_offset": 0.644, 
+            "size": 76120
+        }, 
+        {
+            "y_offset": 0.2, 
+            "children": [
+                {
+                    "name": "General Works", 
+                    "size": 42369
+                }, 
+                {
+                    "name": "Philosophy and Religion", 
+                    "size": 14212
+                }, 
+                {
+                    "name": "Psychology", 
+                    "size": 6314
+                }, 
+                {
+                    "name": "History", 
+                    "size": 56745
+                }, 
+                {
+                    "name": "Geography", 
+                    "size": 8927
+                }, 
+                {
+                    "name": "Environmental Science", 
+                    "size": 231
+                }, 
+                {
+                    "name": "Anthropology", 
+                    "size": 4151
+                }, 
+                {
+                    "name": "Social Science", 
+                    "size": 49475
+                }, 
+                {
+                    "name": "Statistics", 
+                    "size": 4867
+                }, 
+                {
+                    "name": "Economics", 
+                    "size": 31064
+                }, 
+                {
+                    "name": "Business and Management", 
+                    "size": 93114
+                }, 
+                {
+                    "name": "Industrial Relations Collection", 
+                    "size": 28677
+                }, 
+                {
+                    "name": "Political Science", 
+                    "size": 25447
+                }, 
+                {
+                    "name": "Law", 
+                    "size": 14257
+                }, 
+                {
+                    "name": "Education", 
+                    "size": 7860
+                }, 
+                {
+                    "name": "Music", 
+                    "size": 8408
+                }, 
+                {
+                    "name": "Fine Arts", 
+                    "size": 32665
+                }, 
+                {
+                    "name": "Language and Literature", 
+                    "size": 56613
+                }, 
+                {
+                    "name": "General Science", 
+                    "size": 22356
+                }, 
+                {
+                    "name": "Mathematics", 
+                    "size": 38497
+                }, 
+                {
+                    "name": "Computer Science", 
+                    "size": 8771
+                }, 
+                {
+                    "name": "Astronomy", 
+                    "size": 8245
+                }, 
+                {
+                    "name": "Physics", 
+                    "size": 55603
+                }, 
+                {
+                    "name": "Chemistry", 
+                    "size": 35602
+                }, 
+                {
+                    "name": "Geology", 
+                    "size": 15841
+                }, 
+                {
+                    "name": "Biology", 
+                    "size": 51279
+                }, 
+                {
+                    "name": "Medicine", 
+                    "size": 33788
+                }, 
+                {
+                    "name": "Agriculture", 
+                    "size": 8911
+                }, 
+                {
+                    "name": "Technology and Engineering", 
+                    "size": 148640
+                }, 
+                {
+                    "name": "Thesis", 
+                    "size": 47
+                }, 
+                {
+                    "name": "Military Science", 
+                    "size": 3489
+                }, 
+                {
+                    "name": "Naval Science", 
+                    "size": 4458
+                }
+            ], 
+            "name": "Harvard Depository", 
+            "x_offset": 0.8, 
+            "size": 920923
+        }, 
+        {
+            "y_offset": 0.115, 
+            "children": [
+                {
+                    "name": "General Works", 
+                    "size": 8279
+                }, 
+                {
+                    "name": "Philosophy and Religion", 
+                    "size": 441
+                }, 
+                {
+                    "name": "Psychology", 
+                    "size": 400
+                }, 
+                {
+                    "name": "History", 
+                    "size": 1711
+                }, 
+                {
+                    "name": "Geography", 
+                    "size": 1898
+                }, 
+                {
+                    "name": "Anthropology", 
+                    "size": 278
+                }, 
+                {
+                    "name": "Social Science", 
+                    "size": 1343
+                }, 
+                {
+                    "name": "Statistics", 
+                    "size": 3260
+                }, 
+                {
+                    "name": "Economics", 
+                    "size": 2621
+                }, 
+                {
+                    "name": "Business and Management", 
+                    "size": 16232
+                }, 
+                {
+                    "name": "Political Science", 
+                    "size": 865
+                }, 
+                {
+                    "name": "Law", 
+                    "size": 811
+                }, 
+                {
+                    "name": "Education", 
+                    "size": 310
+                }, 
+                {
+                    "name": "Music", 
+                    "size": 14493
+                }, 
+                {
+                    "name": "Fine Arts", 
+                    "size": 2987
+                }, 
+                {
+                    "name": "Language and Literature", 
+                    "size": 2394
+                }, 
+                {
+                    "name": "General Science", 
+                    "size": 2723
+                }, 
+                {
+                    "name": "Mathematics", 
+                    "size": 5138
+                }, 
+                {
+                    "name": "Computer Science", 
+                    "size": 488
+                }, 
+                {
+                    "name": "Astronomy", 
+                    "size": 2104
+                }, 
+                {
+                    "name": "Physics", 
+                    "size": 8169
+                }, 
+                {
+                    "name": "Chemistry", 
+                    "size": 9459
+                }, 
+                {
+                    "name": "Geology", 
+                    "size": 4197
+                }, 
+                {
+                    "name": "Biology", 
+                    "size": 8694
+                }, 
+                {
+                    "name": "Medicine", 
+                    "size": 4274
+                }, 
+                {
+                    "name": "Agriculture", 
+                    "size": 908
+                }, 
+                {
+                    "name": "Technology and Engineering", 
+                    "size": 46875
+                }, 
+                {
+                    "name": "Thesis", 
+                    "size": 3
+                }, 
+                {
+                    "name": "Military Science", 
+                    "size": 271
+                }, 
+                {
+                    "name": "Naval Science", 
+                    "size": 2057
+                }
+            ], 
+            "name": "Annex", 
+            "x_offset": 0.437, 
+            "size": 153683
+        }
+    ], 
+    "name": "MIT Libraries", 
+    "size": 2228450
+}

@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify, request
-from data_vis import get_data_by_location, get_groups, get_data_node_link
+from data_vis import get_data_by_location, get_groups, get_data_node_link, get_subjects_list
+from parse_data import get_collections_by_location_json
 import json
 
 app = Flask(__name__)
@@ -16,7 +17,8 @@ def index(level="Directorate"):
 
 @app.route("/collections")
 def collections():
-	return render_template("collections.html")
+	subjects = get_subjects_list()
+	return render_template("collections.html", subjects=subjects)
 	
 @app.route("/map")
 @app.route("/map/<level>")
@@ -43,6 +45,10 @@ def matrix_data():
 def map_data(level="Directorate"):
 	selected_groups = get_groups(level)
 	return jsonify(get_data_by_location(selected_groups, False))
+
+@app.route("/collections_data")
+def collections_data():
+	return jsonify(get_collections_by_location_json('data_testing/combined_item_by_location.txt'))
 	
 if __name__ == "__main__":
 	app.run(debug=True)

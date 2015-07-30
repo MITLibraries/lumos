@@ -24,20 +24,20 @@
     </div>
 
     <div id="display">
-      <div id="info" style="margin-top:40px">
-        {% for l in levels %}
+      <div id="info">
+<!--         {% for l in levels %}
           <a class="nav" href="{{ url_for('map', level=l) }}">{{ l }}</a>{% if l != levels[-1] %} | {% endif %}
         {% endfor %}
-        </ul>
+        </ul> -->
       </div>
     </div>
 
-    <script src={{ url_for('static', filename='map.js') }}></script>  
+    <script src={{ url_for('static', filename='collections.js') }}></script>  
 
     <script>
-      var key_text = '{{ functions|tojson|safe }}';
-      var level = '{{ level }}'
+      var collections = '{{ subjects|tojson|safe }}'
     </script>
+
 
   </body>
 

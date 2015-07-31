@@ -1,44 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>MIT Libraries Functional Visualization</title>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script> 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700|Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link href={{ url_for('static', filename='style.css') }} rel="stylesheet">
-  </head>
-
-  <body>
-    <div id="title">
-      <h1><a class="title" href="{{ url_for('index') }}">MIT Libraries<br />&nbsp; &nbsp;Organizational Functions Visualization</a></h1>
-    </div>
-
-    <div id="menu">
-      <ul id="menu">
-        <li><a class="menu" href="{{ url_for('index') }}">Locations</a></li>
-        <li><a class="menu" href="{{ url_for('matrix') }}">Co-occurrence</a></li>
-        <li><a class="menu" href="{{ url_for('map') }}">Map</a></li>
-        <li><a class="menu" href="{{ url_for('collections') }}">Collections</a></li>
-      </ul>
-    </div>
-
-    <div id="display">
-      <div id="info">
-<!--         {% for l in levels %}
-          <a class="nav" href="{{ url_for('map', level=l) }}">{{ l }}</a>{% if l != levels[-1] %} | {% endif %}
-        {% endfor %}
-        </ul> -->
-      </div>
-    </div>
-
-    <script src={{ url_for('static', filename='collections.js') }}></script>  
-
-    <script>
-      var collections = '{{ subjects|tojson|safe }}'
-    </script>
-
-
-  </body>
-
-</html>
+{% extends "index.html" %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block display %}
+  <div id="info"></div>
+{% endblock %}
+{% block scripts %}
+  <script src={{ url_for('static', filename='collections.js') }}></script>  
+  <script>
+    var collections = '{{ subjects|tojson|safe }}'
+  </script>
+{% endblock %}
+{% block body %}
+  {{ super() }}
+{% endblock %}

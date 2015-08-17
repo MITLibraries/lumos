@@ -45,6 +45,12 @@ h1, .title {
   line-height: 150%;
 }
 
+h2 {
+  font-size: 1.5em;
+  font-weight: normal;
+  color: navy;
+}
+
 a.title:hover {
   color: navy;
 }

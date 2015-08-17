@@ -3,7 +3,8 @@
   {{ super() }}
 {% endblock %}
 {% block display %}
-  <div id="info"></div>
+  <div id="info">
+  </div>
 {% endblock %}
 {% block scripts %}
   <script src={{ url_for('static', filename='collections.js') }}></script>  

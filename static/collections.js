@@ -158,6 +158,14 @@ function createGraph() {
           }
         });
 
+        label.attr("y", function(e) {
+          for (item in e.children) {
+            if (d == e.children[item].name) {
+              return e.y_offset * h + scale(e.children[item].size) + 8;
+            }
+          }
+        });
+
         d3.select("#infoBox")
           .append("foreignObject")
           .attr("x", 20)
@@ -241,6 +249,21 @@ function createGraph() {
       })
       .attr("r", function(d) {
         return d;
+      });
+
+    var label = lsvg.selectAll("text")
+      .data(locations)
+      .enter().append("text")
+      .attr("class", "legendText")
+      .style("text-anchor", "middle")
+      .attr("x", function(d) {
+        return d.x_offset * lw;
+      })
+      .attr("y", function(d) {
+        return d.y_offset * h + scale(d.size) + 8;
+      })
+      .text(function(d) {
+        return d.short_name;
       });
 
     var legendText = lsvg.selectAll("line")

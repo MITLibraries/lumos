@@ -1,7 +1,10 @@
 {
     "children": [
         {
+            "name": "Barker Library", 
+            "short_name": "Barker", 
             "y_offset": 0.665, 
+            "x_offset": 0.5675, 
             "children": [
                 {
                     "name": "General Works", 
@@ -128,12 +131,13 @@
                     "size": 1992
                 }
             ], 
-            "name": "Barker Library", 
-            "x_offset": 0.5675, 
             "size": 153284
         }, 
         {
+            "name": "Dewey Library", 
+            "short_name": "Dewey", 
             "y_offset": 0.8045, 
+            "x_offset": 0.823, 
             "children": [
                 {
                     "name": "General Works", 
@@ -260,12 +264,13 @@
                     "size": 351
                 }
             ], 
-            "name": "Dewey Library", 
-            "x_offset": 0.823, 
             "size": 223528
         }, 
         {
+            "name": "Hayden Library", 
+            "short_name": "Hayden", 
             "y_offset": 0.835, 
+            "x_offset": 0.635, 
             "children": [
                 {
                     "name": "General Works", 
@@ -392,12 +397,13 @@
                     "size": 333
                 }
             ], 
-            "name": "Hayden Library", 
-            "x_offset": 0.635, 
             "size": 356872
         }, 
         {
+            "name": "Rotch Library", 
+            "short_name": "Rotch", 
             "y_offset": 0.655, 
+            "x_offset": 0.5262, 
             "children": [
                 {
                     "name": "General Works", 
@@ -524,12 +530,13 @@
                     "size": 26
                 }
             ], 
-            "name": "Rotch Library", 
-            "x_offset": 0.5262, 
             "size": 124046
         }, 
         {
+            "name": "IASC", 
+            "short_name": "IASC", 
             "y_offset": 0.79, 
+            "x_offset": 0.635, 
             "children": [
                 {
                     "name": "General Works", 
@@ -656,12 +663,13 @@
                     "size": 566
                 }
             ], 
-            "name": "IASC", 
-            "x_offset": 0.635, 
             "size": 219994
         }, 
         {
+            "name": "Lewis Music Library", 
+            "short_name": "Lewis", 
             "y_offset": 0.81, 
+            "x_offset": 0.644, 
             "children": [
                 {
                     "name": "General Works", 
@@ -764,12 +772,13 @@
                     "size": 161
                 }
             ], 
-            "name": "Lewis Music Library", 
-            "x_offset": 0.644, 
             "size": 76120
         }, 
         {
+            "name": "Harvard Depository", 
+            "short_name": "HD", 
             "y_offset": 0.2, 
+            "x_offset": 0.8, 
             "children": [
                 {
                     "name": "General Works", 
@@ -900,12 +909,13 @@
                     "size": 4458
                 }
             ], 
-            "name": "Harvard Depository", 
-            "x_offset": 0.8, 
             "size": 920923
         }, 
         {
+            "name": "Annex", 
+            "short_name": "Annex", 
             "y_offset": 0.115, 
+            "x_offset": 0.437, 
             "children": [
                 {
                     "name": "General Works", 
@@ -1028,8 +1038,6 @@
                     "size": 2057
                 }
             ], 
-            "name": "Annex", 
-            "x_offset": 0.437, 
             "size": 153683
         }
     ], 

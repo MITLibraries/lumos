@@ -107,6 +107,8 @@ def clean_new_data(input_data):
 
 		Rename locations: Certain locations need to be renamed to match location names in other data files in this application.
 
+		Add short names: Certain locations have short versions of the names added for visualization labels.
+
 	Args:
 		input_data(list): List representing data set.
 
@@ -122,15 +124,31 @@ def clean_new_data(input_data):
 			if row[6]:
 				if row[0] == 'Hayden Reserves' or row[0] == 'Humanities Library' or row[0] == 'Science Library':
 					row[0] = 'Hayden Library'
+					row.append('Hayden')
 				elif row[0] == 'Rotch Visual Collections':
 					row[0] = 'Rotch Library'
+					row.append('Rotch')
 				elif row[0] == 'Library Storage Annex':
 					if row[1] == 'Off Campus Collection':
 						row[0] = 'Harvard Depository'
+						row.append('HD')
 					else:
 						row[0] = 'Annex'
+						row.append('Annex')
 				elif row[0] == 'Institute Archives':
 					row[0] = 'IASC'
+					row.append('IASC')
+				elif row[0] == 'Dewey Library':
+					row.append('Dewey')
+				elif row[0] == 'Barker Library':
+					row.append('Barker')
+				elif row[0] == 'Lewis Music Library':
+					row.append('Lewis')
+				elif row[0] == 'Harvard Depository':
+					row.append('HD')
+				elif row[0] == 'Rotch Library':
+					row.append('Rotch')
+				# print row
 				RESULTS.append(row)
 		except(IndexError):
 			pass
@@ -153,9 +171,11 @@ def get_collections_by_location_json(input_data_file):
 		for row in data:
 			location = row[0]
 			subject = row[6]
+			shortname = row[7]
 
 			update_children(RESULTS['children'], location, 'name', 'size', {
 				'name': location,
+				'short_name': shortname,
 				'size': 1,
 				'children': []
 				})
